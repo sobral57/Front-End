@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo da Compra</title>
+</head>
+<body>
+    <h1>Resumo da Compra</h1>
+
+    <script>
+        function calcularTotal(precoUnitario, quantidade) {
+            return precoUnitario * quantidade;
+        }
+
+        function aplicarDesconto(valorTotal) {
+            if (valorTotal > 100) {
+                return valorTotal * 0.9;
+            } else {
+                return valorTotal;
+            }
+        }
+
+        function exibirResumo() {
+            const precoUnitario = parseFloat(prompt("Digite o preço unitário do produto (R$):"));
+            const quantidade = parseInt(prompt("Digite a quantidade comprada:"));
+
+            const valorTotal = calcularTotal(precoUnitario, quantidade);
+
+            const valorComDesconto = aplicarDesconto(valorTotal);
+
+            alert(`
+                Resumo da Compra:
+                ------------------------
+                Valor Total (antes do desconto): R$ ${valorTotal.toFixed(2)}
+                Valor com Desconto: R$ ${valorComDesconto.toFixed(2)}
+            `);
+        }
+
+        exibirResumo();
+    </script>
+</body>
+</html>
